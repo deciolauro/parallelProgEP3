@@ -1,0 +1,107 @@
+\hypertarget{mandelbrot__mpi__op_8c}{}\section{mandelbrot\+\_\+mpi\+\_\+op.\+c File Reference}
+\label{mandelbrot__mpi__op_8c}\index{mandelbrot\+\_\+mpi\+\_\+op.\+c@{mandelbrot\+\_\+mpi\+\_\+op.\+c}}
+
+
+Open M\+PI C implementation to compute and plot mandelbrot set.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$complex.\+h$>$}\\*
+{\ttfamily \#include $<$mpi.\+h$>$}\\*
+Include dependency graph for mandelbrot\+\_\+mpi\+\_\+op.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{mandelbrot__mpi__op_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries M\+A\+X\+\_\+\+I\+T\+ER}~300\hypertarget{mandelbrot__mpi__op_8c_acd517c6f195c75b9dd0f3aad65326f3b}{}\label{mandelbrot__mpi__op_8c_acd517c6f195c75b9dd0f3aad65326f3b}
+
+\item 
+\#define {\bfseries E\+S\+C\+A\+P\+E\+\_\+\+R\+A\+D\+I\+U\+S\+\_\+\+S\+Q\+U\+A\+R\+ED}~4\hypertarget{mandelbrot__mpi__op_8c_a7c7393421319c3452cfbe9a49a5fbfa7}{}\label{mandelbrot__mpi__op_8c_a7c7393421319c3452cfbe9a49a5fbfa7}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{mandelbrot__mpi__op_8c_a790aaf32862890d4cd0539c2a77149d6}{mandelbrot} (complex z0)
+\begin{DoxyCompactList}\small\item\em Perform the calculations for the set until divergence or M\+A\+X\+\_\+\+I\+T\+ER. \end{DoxyCompactList}\item 
+void \hyperlink{mandelbrot__mpi__op_8c_a2eb771fa3527f72e821a14e413498d1d}{print\+\_\+instructions} ()
+\begin{DoxyCompactList}\small\item\em Function responsible for printing usage instructions. \end{DoxyCompactList}\item 
+int {\bfseries main} (int argc, char $\ast$$\ast$argv)\hypertarget{mandelbrot__mpi__op_8c_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{mandelbrot__mpi__op_8c_a3c04138a5bfe5d72780bb7e82a18e627}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Open M\+PI C implementation to compute and plot mandelbrot set. 
+
+Open M\+PI C implementation of a program to compute and plot some subset of a mandelbrot set adapted from the classes given by MJ Rutter (\href{https://www.tcm.phy.cam.ac.uk/~mjr/courses/MPI/MPI.pdf}{\tt https\+://www.\+tcm.\+phy.\+cam.\+ac.\+uk/$\sim$mjr/courses/\+M\+P\+I/\+M\+P\+I.\+pdf}) in which every processes is responsible for writing your work with optimizations in the load balance
+
+Usage\+: mpirun -\/np NP ./mandelbrot\+\_\+mpi\+\_\+op c\+\_\+x\+\_\+min c\+\_\+x\+\_\+max c\+\_\+y\+\_\+min c\+\_\+y\+\_\+max image\+\_\+size
+\begin{DoxyItemize}
+\item NP\+: Number of Open M\+PI processes
+\item c\+\_\+x\+\_\+min\+: Lowest x boundary for the figure to be computed
+\item c\+\_\+x\+\_\+max\+: Highest x boundary for the figure to be computed
+\item c\+\_\+y\+\_\+mix\+: Lowest y boundary for the figure to be computed
+\item c\+\_\+y\+\_\+max\+: Highest y boundary for the figure to be computed
+\item image\+\_\+size\+: The resolution of the resulting image Usage examples\+: Full Picture\+: mpirun -\/np 4 ./mandelbrot\+\_\+mpi\+\_\+op -\/2.\+5 1.\+5 -\/2.\+0 2.\+0 11500 Seahorse Valley\+: mpirun -\/np 4 ./mandelbrot\+\_\+mpi\+\_\+op -\/0.\+8 -\/0.\+7 0.\+05 0.\+15 8192 Elephant Valley\+: mpirun -\/np 8 ./mandelbrot\+\_\+mpi\+\_\+op 0.\+175 0.\+375 -\/0.\+1 0.\+1 800 T Spir Val\+: mpirun -\/np 2 ./mandelbrot\+\_\+mpi\+\_\+op -\/0.\+188 -\/0.\+012 0.\+554 0.\+754 400
+\end{DoxyItemize}
+
+Notes\+: Although we made modifications, this code is heavily based on the class examples provided by MJ Rutter. Because of that, in any event of license and copyright conflict, the license/copyright provided by Mr. Rutter T\+A\+KE P\+R\+E\+C\+E\+D\+E\+N\+CE O\+V\+ER the G\+P\+Lv3 on which this code was released.
+
+\begin{DoxyAuthor}{Author}
+Decio Lauro Soares (\href{mailto:deciolauro@gmail.com}{\tt deciolauro@gmail.\+com}) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+05 Jul 2017 
+\end{DoxyDate}
+\begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000005}{Bug}]No known bugs \end{DoxyRefDesc}
+\begin{DoxyWarning}{Warning}
+Based on class given by MJ Rutter(\+May contain Copyright issues) 
+\end{DoxyWarning}
+\begin{DoxyCopyright}{Copyright}
+G\+NU Public License v3 
+\end{DoxyCopyright}
+
+
+\subsection{Function Documentation}
+\index{mandelbrot\+\_\+mpi\+\_\+op.\+c@{mandelbrot\+\_\+mpi\+\_\+op.\+c}!mandelbrot@{mandelbrot}}
+\index{mandelbrot@{mandelbrot}!mandelbrot\+\_\+mpi\+\_\+op.\+c@{mandelbrot\+\_\+mpi\+\_\+op.\+c}}
+\subsubsection[{\texorpdfstring{mandelbrot(complex z0)}{mandelbrot(complex z0)}}]{\setlength{\rightskip}{0pt plus 5cm}int mandelbrot (
+\begin{DoxyParamCaption}
+\item[{complex}]{z0}
+\end{DoxyParamCaption}
+)}\hypertarget{mandelbrot__mpi__op_8c_a790aaf32862890d4cd0539c2a77149d6}{}\label{mandelbrot__mpi__op_8c_a790aaf32862890d4cd0539c2a77149d6}
+
+
+Perform the calculations for the set until divergence or M\+A\+X\+\_\+\+I\+T\+ER. 
+
+For the complex number z0, it performs the Mandelbrot calculation until it reaches divergence or it reaches the maximum number of iterations, whichever happens first, returning the number of iterations until divergence or M\+A\+X\+\_\+\+I\+T\+ER
+
+
+\begin{DoxyParams}{Parameters}
+{\em z0} & complex number to perform the Mandelbrot calculations \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+i integer with the number of iterations until divergerce or M\+A\+X\+\_\+\+I\+T\+ER 
+\end{DoxyReturn}
+\index{mandelbrot\+\_\+mpi\+\_\+op.\+c@{mandelbrot\+\_\+mpi\+\_\+op.\+c}!print\+\_\+instructions@{print\+\_\+instructions}}
+\index{print\+\_\+instructions@{print\+\_\+instructions}!mandelbrot\+\_\+mpi\+\_\+op.\+c@{mandelbrot\+\_\+mpi\+\_\+op.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+instructions()}{print_instructions()}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+instructions (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{mandelbrot__mpi__op_8c_a2eb771fa3527f72e821a14e413498d1d}{}\label{mandelbrot__mpi__op_8c_a2eb771fa3527f72e821a14e413498d1d}
+
+
+Function responsible for printing usage instructions. 
+
+This function is responsible for printing the usage instructions 
